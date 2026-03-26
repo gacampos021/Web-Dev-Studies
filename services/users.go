@@ -3,9 +3,9 @@ package services
 import (
 	"net/http"
 
-	dto "study-api/dto"
-	models "study-api/model"
-	mongo "study-api/mongo"
+	"study-api/dto"
+	"study-api/models"
+	"study-api/mongo"
 
 	"context"
 

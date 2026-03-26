@@ -4,11 +4,11 @@ import (
 	"context"
 	"log"
 
+	"study-api/config"
+
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
-
-const uri = "mongodb+srv://gacampos021_db_user:0O3xyW5iowAFP2eT@cluster0.nm3kjap.mongodb.net/?appName=Cluster0"
 
 var MongoClient *mongo.Client
 
@@ -19,6 +19,9 @@ func init() {
 }
 
 func connect_mongodb() error {
+	config.LoadEnv()
+	uri := config.GetEnv("URI_MONGO")
+
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	opts := options.Client().ApplyURI(uri).SetServerAPIOptions((serverAPI))
 
