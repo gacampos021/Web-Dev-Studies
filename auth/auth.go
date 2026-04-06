@@ -10,7 +10,7 @@ import (
 
 func GenerateToken(userID, email string) (string, error) {
 	config.LoadEnv()
-	var jwtSecret = config.GetEnv("URI_MONGO")
+	var jwtSecret = []byte(config.GetEnv("URI_MONGO"))
 
 	expirationTime := time.Now().Add(24 * time.Hour)
 
@@ -35,7 +35,7 @@ func GenerateToken(userID, email string) (string, error) {
 
 func ValidateToken(tokenString string) (*Claims, error) {
 	config.LoadEnv()
-	var jwtSecret = config.GetEnv("URI_MONGO")
+	var jwtSecret = []byte(config.GetEnv("URI_MONGO"))
 
 	claims := &Claims{}
 

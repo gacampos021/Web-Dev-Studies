@@ -39,7 +39,7 @@ func Login(c *gin.Context) {
 	token, err := GenerateToken("user123", req.Email)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"error": "erro ao gerar token",
+			"error": err.Error(),
 		})
 		return
 	}

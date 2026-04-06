@@ -7,4 +7,6 @@ type User struct {
 	UserName string             `bson:"user" json:"user"`
 	Email    string             `bson:"email" json:"email"`
 	Password string             `bson:"password,omitempty" json:"-"`
+	Name     string             `json:"name"`
+	Age      int8               `json:"age"`
 }
