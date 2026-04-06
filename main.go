@@ -16,6 +16,7 @@ func main() {
 	})
 
 	routes.RegisterUsersRoutes(r)
+	routes.RegisterLoginRoutes(r)
 
 	r.Run(":8080")
 }

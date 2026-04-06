@@ -29,6 +29,7 @@ func GetUsers(c *gin.Context) {
 
 	c.JSON(http.StatusOK, users)
 }
+
 func GetUserById(c *gin.Context) {
 
 	id := c.Param("id")
